@@ -1,0 +1,22 @@
+---
+type Category = 'self' | 'handyman' | 'dismissed';
+interface Props {
+  category: Category;
+}
+const { category } = Astro.props;
+
+const labels: Record<Category, string> = {
+  self: 'Self',
+  handyman: 'Handyman',
+  dismissed: 'Dismissed',
+};
+
+const styles: Record<Category, string> = {
+  self: 'bg-brand-100 text-brand-700',
+  handyman: 'bg-violet-100 text-violet-700',
+  dismissed: 'bg-gray-100 text-gray-500',
+};
+---
+<span class={`inline-flex items-center text-[10px] font-semibold uppercase tracking-wide rounded px-1.5 py-0.5 ${styles[category]}`}>
+  {labels[category]}
+</span>

@@ -1,0 +1,25 @@
+---
+type Severity = 'repairs-recommended' | 'attention' | 'preventive';
+interface Props {
+  severity: Severity;
+  size?: 'sm' | 'md';
+}
+const { severity, size = 'md' } = Astro.props;
+
+const labels: Record<Severity, string> = {
+  'repairs-recommended': 'Repairs Recommended',
+  attention: 'Attention',
+  preventive: 'Preventive',
+};
+
+const styles: Record<Severity, string> = {
+  'repairs-recommended': 'bg-sev-repairs-bg text-sev-repairs ring-sev-repairs/20',
+  attention: 'bg-sev-attention-bg text-sev-attention ring-sev-attention/20',
+  preventive: 'bg-sev-preventive-bg text-sev-preventive ring-sev-preventive/20',
+};
+
+const sizeClasses = size === 'sm' ? 'text-[10px] px-1.5 py-0.5' : 'text-xs px-2 py-1';
+---
+<span class={`inline-flex items-center font-semibold rounded-full ring-1 ring-inset ${styles[severity]} ${sizeClasses}`}>
+  {labels[severity]}
+</span>

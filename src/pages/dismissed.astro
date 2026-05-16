@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import FindingCard from '../components/FindingCard.astro';
+
+const findings = (await getCollection('findings', f => f.data.category === 'dismissed')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+<Layout activeNav="dismissed" title="Dismissed findings · Inspection Findings">
+  <section class="mb-6">
+    <h1 class="text-3xl font-semibold text-brand-900 tracking-tight">Dismissed</h1>
+    <p class="text-gray-600 mt-1">Reviewed and intentionally not acted on.</p>
+  </section>
+
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {findings.map(finding => <FindingCard finding={finding} />)}
+  </section>
+</Layout>

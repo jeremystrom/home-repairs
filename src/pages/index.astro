@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import FindingCard from '../components/FindingCard.astro';
+
+const findings = (await getCollection('findings')).sort((a, b) => a.data.order - b.data.order);
+
+const stats = {
+  total: findings.length,
+  self: findings.filter(f => f.data.category === 'self').length,
+  handyman: findings.filter(f => f.data.category === 'handyman').length,
+  dismissed: findings.filter(f => f.data.category === 'dismissed').length,
+};
+---
+<Layout activeNav="all">
+  <section class="mb-8">
+    <h1 class="text-3xl font-semibold text-brand-900 tracking-tight">All findings</h1>
+    <p class="text-gray-600 mt-1">Action items from the inspection, grouped by who handles them.</p>
+
+    <div class="mt-5 grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-white rounded-lg ring-1 ring-brand-100 p-4">
+        <div class="text-2xl font-semibold text-brand-900">{stats.total}</div>
+        <div class="text-xs uppercase tracking-wide text-gray-500 mt-1">Findings</div>
+      </div>
+      <div class="bg-white rounded-lg ring-1 ring-brand-100 p-4">
+        <div class="text-2xl font-semibold text-brand-700">{stats.self}</div>
+        <div class="text-xs uppercase tracking-wide text-gray-500 mt-1">Self</div>
+      </div>
+      <div class="bg-white rounded-lg ring-1 ring-brand-100 p-4">
+        <div class="text-2xl font-semibold text-violet-700">{stats.handyman}</div>
+        <div class="text-xs uppercase tracking-wide text-gray-500 mt-1">Handyman</div>
+      </div>
+      <div class="bg-white rounded-lg ring-1 ring-brand-100 p-4">
+        <div class="text-2xl font-semibold text-gray-400">{stats.dismissed}</div>
+        <div class="text-xs uppercase tracking-wide text-gray-500 mt-1">Dismissed</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {findings.map(finding => <FindingCard finding={finding} />)}
+  </section>
+</Layout>

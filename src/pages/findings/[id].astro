@@ -1,0 +1,85 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import SeverityBadge from '../../components/SeverityBadge.astro';
+import CategoryBadge from '../../components/CategoryBadge.astro';
+import PhotoGallery from '../../components/PhotoGallery.astro';
+
+export async function getStaticPaths() {
+  const findings = await getCollection('findings');
+  return findings.map(finding => ({
+    params: { id: finding.data.id },
+    props: { finding },
+  }));
+}
+
+const { finding } = Astro.props;
+const { Content } = await render(finding);
+
+const findings = (await getCollection('findings')).sort((a, b) => a.data.order - b.data.order);
+const idx = findings.findIndex(f => f.data.id === finding.data.id);
+const prev = idx > 0 ? findings[idx - 1] : null;
+const next = idx < findings.length - 1 ? findings[idx + 1] : null;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const navMap = { self: 'self', handyman: 'handyman', dismissed: 'dismissed' } as const;
+---
+<Layout
+  activeNav={navMap[finding.data.category]}
+  title={`${finding.data.id} · ${finding.data.title}`}
+  description={finding.data.inspectorQuote.slice(0, 160)}
+>
+  <article>
+    <div class="mb-4">
+      <a href={`${base}/`} class="text-sm text-brand-700 hover:text-brand-900">← All findings</a>
+    </div>
+
+    <header class="mb-6">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-mono text-gray-400">{finding.data.id}</span>
+        <CategoryBadge category={finding.data.category} />
+        <SeverityBadge severity={finding.data.severity} />
+        {finding.data.bundleId && (
+          <span class="text-[10px] uppercase tracking-wide text-violet-600 font-semibold bg-violet-50 rounded px-1.5 py-0.5">
+            Bundled · {finding.data.bundleId}
+          </span>
+        )}
+      </div>
+      <h1 class="text-3xl font-semibold text-brand-900 tracking-tight">{finding.data.title}</h1>
+      <dl class="mt-3 text-sm text-gray-600 flex flex-wrap gap-x-6 gap-y-1">
+        <div class="flex gap-1">
+          <dt class="font-semibold text-brand-700">Location:</dt>
+          <dd>{finding.data.location}</dd>
+        </div>
+        <div class="flex gap-1">
+          <dt class="font-semibold text-brand-700">Report pages:</dt>
+          <dd>{finding.data.pages}</dd>
+        </div>
+      </dl>
+    </header>
+
+    <PhotoGallery photos={finding.data.photos} />
+
+    <section class="bg-brand-50 border-l-4 border-brand-500 px-4 py-3 my-6 rounded-r">
+      <div class="text-xs uppercase tracking-wide text-brand-700 font-semibold mb-1">Inspector said</div>
+      <p class="text-gray-800 italic leading-relaxed">"{finding.data.inspectorQuote}"</p>
+    </section>
+
+    <div class="prose-finding max-w-none">
+      <Content />
+    </div>
+
+    <nav class="mt-12 pt-6 border-t border-brand-100 flex justify-between text-sm">
+      {prev ? (
+        <a href={`${base}/findings/${prev.data.id}`} class="text-brand-700 hover:text-brand-900">
+          ← {prev.data.id} · {prev.data.title}
+        </a>
+      ) : <span />}
+      {next ? (
+        <a href={`${base}/findings/${next.data.id}`} class="text-brand-700 hover:text-brand-900 text-right">
+          {next.data.id} · {next.data.title} →
+        </a>
+      ) : <span />}
+    </nav>
+  </article>
+</Layout>

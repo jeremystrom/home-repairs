@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  activeNav?: 'all' | 'self' | 'handyman' | 'dismissed';
+}
+
+const { title = 'Inspection Findings', description = 'Action items from the home inspection.', activeNav = 'all' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const navItems = [
+  { key: 'all', label: 'All', href: `${base}/` },
+  { key: 'self', label: 'Self', href: `${base}/self` },
+  { key: 'handyman', label: 'Handyman', href: `${base}/handyman` },
+  { key: 'dismissed', label: 'Dismissed', href: `${base}/dismissed` },
+] as const;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="border-b border-brand-100 bg-white">
+      <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <a href={`${base}/`} class="text-lg font-semibold text-brand-900 hover:text-brand-700">
+          Inspection Findings
+        </a>
+        <nav class="flex gap-1 text-sm font-medium">
+          {navItems.map(item => (
+            <a
+              href={item.href}
+              class:list={[
+                'px-3 py-1.5 rounded-full transition',
+                activeNav === item.key
+                  ? 'bg-brand-500 text-white'
+                  : 'text-brand-700 hover:bg-brand-100',
+              ]}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-8">
+      <slot />
+    </main>
+
+    <footer class="border-t border-brand-100 bg-white">
+      <div class="max-w-5xl mx-auto px-4 py-4 text-xs text-gray-500">
+        Private working document. Not for distribution.
+      </div>
+    </footer>
+  </body>
+</html>
