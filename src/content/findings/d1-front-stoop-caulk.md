@@ -8,8 +8,10 @@ pages: "15"
 order: 10
 inspectorQuote: Additional application of caulk where the front stoop meets the brick siding to prevent water entry between the steps and the structure of the home. To prevent any freeze/thaw problems in the future.
 photos:
+  - src: ../../assets/findings/img-016-098.jpg
+    caption: Arrows mark the joint between brick siding and concrete stoop that needs caulking
   - src: ../../assets/findings/img-023-157.jpg
-    caption: Front porch and stoop — caulk the joint where concrete meets brick on all sides
+    caption: Front porch overview — caulk the joint on all sides where concrete meets brick
 ---
 
 ## Diagnosis
