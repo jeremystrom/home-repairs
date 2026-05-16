@@ -9,7 +9,7 @@ interface Props {
 }
 const { finding } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const href = `${base}/findings/${finding.id}`;
+const href = `${base}/findings/${finding.data.id}`;
 const hero = finding.data.photos[0];
 ---
 <a href={href} class="group block bg-white rounded-lg overflow-hidden ring-1 ring-brand-100 hover:ring-brand-500 hover:shadow-md transition">
