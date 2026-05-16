@@ -18,7 +18,7 @@ photos:
 
 Root cause confirmed by the close-up: the electrical box was set for original drywall thickness, then tile was installed on top. The box sits roughly 3/8–1/2" behind the tile face, so the outlet's mounting yoke is being pulled forward by the cover plate screws and bridging the gap with nothing to brace against — it rocks under load and the metal ears are visibly bent.
 
-The tile opening is rough but not overhanging the box, so no tile cutting should be needed. A standard or jumbo cover plate will hide the cut edges once the outlet sits flush.
+The tile opening is rough but not overhanging the box, so no tile cutting should be needed. The existing standard cover plate already covers the cut edges, so a standard plate is fine once the outlet sits flush.
 
 Because the yoke is bent, plan to replace the outlet itself (not just remount it) — bent ears won't sit square even with an extender.
 
@@ -26,7 +26,6 @@ Because the yoke is bent, plan to replace the outlet itself (not just remount it
 
 - **Box extender ring:** Carlon B114R or equivalent ("drywall box extender" / "outlet extender") — ~$2 at Home Depot. Pick depth to bring the box rim flush with the tile face; based on the photo, **1/2" is the likely fit**. Grab a 1/4" too if unsure.
 - **Replacement outlet** ($2) — the existing yoke is bent, swap it.
-- **Jumbo / oversized cover plate** (~3.125" × 5") — ~$2. The standard size may not fully cover the chipped tile edges around the opening.
 - Optional: outlet leveling shims / caterpillar spacers (Garvin SP-1, ~$3) as backup if the extender depth is wrong.
 
 ## Tools
@@ -45,6 +44,6 @@ Because the yoke is bent, plan to replace the outlet itself (not just remount it
 6. Disconnect the wires from the old outlet, attach them to the new outlet on the matching screws, and tighten firmly.
 7. Snap the box extender ring onto the front of the box so its front face is flush with the tile.
 8. Push the new outlet into the box, run the long mounting screws through the extender's threaded holes, and tighten until the yoke sits flat against the tile.
-9. Reattach the (jumbo) cover plate, turn the breaker back on, and verify with a $5 plug-in outlet tester that wiring is correct and ground is intact.
+9. Reattach the cover plate, turn the breaker back on, and verify with a $5 plug-in outlet tester that wiring is correct and ground is intact.
 
 If the extender depth turns out to be wrong (outlet still sits proud or recessed after install), swap for the right depth — they're $2 each, faster to buy two than to measure perfectly.
