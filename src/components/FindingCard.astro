@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import SeverityBadge from './SeverityBadge.astro';
 import CategoryBadge from './CategoryBadge.astro';
+import StatusBadge from './StatusBadge.astro';
 
 interface Props {
   finding: CollectionEntry<'findings'>;
@@ -11,8 +12,15 @@ const { finding } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const href = `${base}/findings/${finding.data.id}`;
 const hero = finding.data.photos[0];
+const isDone = finding.data.status === 'done';
 ---
-<a href={href} class="group block bg-white rounded-lg overflow-hidden ring-1 ring-brand-100 hover:ring-brand-500 hover:shadow-md transition">
+<a
+  href={href}
+  class:list={[
+    'group block bg-white rounded-lg overflow-hidden ring-1 ring-brand-100 hover:ring-brand-500 hover:shadow-md transition',
+    isDone && 'opacity-70 hover:opacity-100',
+  ]}
+>
   <div class="aspect-[4/3] bg-brand-100 relative overflow-hidden">
     {hero ? (
       <Image
@@ -20,7 +28,10 @@ const hero = finding.data.photos[0];
         alt={hero.caption ?? finding.data.title}
         width={400}
         height={300}
-        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        class:list={[
+          'w-full h-full object-cover group-hover:scale-105 transition-transform duration-300',
+          isDone && 'grayscale group-hover:grayscale-0',
+        ]}
       />
     ) : (
       <div class="w-full h-full flex items-center justify-center text-brand-200">
@@ -35,6 +46,11 @@ const hero = finding.data.photos[0];
     <div class="absolute top-2 right-2">
       <SeverityBadge severity={finding.data.severity} size="sm" />
     </div>
+    {finding.data.status !== 'todo' && (
+      <div class="absolute bottom-2 left-2">
+        <StatusBadge status={finding.data.status} size="sm" />
+      </div>
+    )}
   </div>
   <div class="p-4">
     <div class="flex items-baseline gap-2 mb-1">
@@ -43,7 +59,7 @@ const hero = finding.data.photos[0];
         <span class="text-[10px] uppercase tracking-wide text-violet-600 font-semibold">Bundled · {finding.data.bundleId}</span>
       )}
     </div>
-    <h3 class="font-semibold text-brand-900 group-hover:text-brand-700 leading-tight">
+    <h3 class:list={['font-semibold leading-tight', isDone ? 'text-gray-500 group-hover:text-brand-700' : 'text-brand-900 group-hover:text-brand-700']}>
       {finding.data.title}
     </h3>
     <p class="text-sm text-gray-500 mt-1 line-clamp-1">{finding.data.location}</p>

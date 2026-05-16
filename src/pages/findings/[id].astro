@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import SeverityBadge from '../../components/SeverityBadge.astro';
 import CategoryBadge from '../../components/CategoryBadge.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
 import PhotoGallery from '../../components/PhotoGallery.astro';
 import { sortFindings } from '../../lib/sort';
 
@@ -36,10 +37,11 @@ const navMap = { self: 'self', handyman: 'handyman', dismissed: 'dismissed' } as
     </div>
 
     <header class="mb-6">
-      <div class="flex items-center gap-2 mb-2">
+      <div class="flex items-center flex-wrap gap-2 mb-2">
         <span class="text-sm font-mono text-gray-400">{finding.data.id}</span>
         <CategoryBadge category={finding.data.category} />
         <SeverityBadge severity={finding.data.severity} />
+        <StatusBadge status={finding.data.status} />
         {finding.data.bundleId && (
           <span class="text-[10px] uppercase tracking-wide text-violet-600 font-semibold bg-violet-50 rounded px-1.5 py-0.5">
             Bundled · {finding.data.bundleId}

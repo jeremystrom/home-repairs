@@ -21,7 +21,7 @@ const findings = defineCollection({
         .default([]),
       bundleId: z.string().optional(),
       inspectorQuote: z.string(),
-      status: z.enum(['todo', 'done']).default('todo'),
+      status: z.enum(['todo', 'in-progress', 'done']).default('todo'),
       order: z.number(),
     }),
 });

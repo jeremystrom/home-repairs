@@ -6,6 +6,7 @@ severity: repairs-recommended
 location: Basement master bedroom bathroom — vanity sink
 pages: "39"
 order: 11
+status: done
 inspectorQuote: There is a slow sink drain. Recommend cleaning the drain and removing whatever item or items are causing the sink to not drain properly. It may be as simple as pulling the sink stopper up and cleaning the hair or other debris off.
 photos:
   - src: ../../assets/findings/img-040-286.jpg

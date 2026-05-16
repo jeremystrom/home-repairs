@@ -6,6 +6,7 @@ severity: repairs-recommended
 location: Multiple — at minimum a garage/workshop outlet + junction box in attic or crawl
 pages: "10, 31"
 order: 8
+status: in-progress
 inspectorQuote: Missing and/or damaged cover plate(s), switch cover(s), and/or junction box cover(s) were identified throughout the structure. This condition leaves energized electrical components exposed to touch, a shock hazard. The inspector recommends replacing all missing or damaged cover plates for safety purposes.
 photos:
   - src: ../../assets/findings/img-010-064.jpg
@@ -13,6 +14,12 @@ photos:
   - src: ../../assets/findings/img-010-065.jpg
     caption: Open junction box in attic/crawlspace with debris
 ---
+
+## Progress notes
+
+- ✅ Garage junction boxes — covers reinstalled, bird's nest cleared.
+- ⏳ Garage workshop outlet (the brown plug in the first photo) — still missing its cover plate.
+- ⏳ Room-by-room walkthrough to find any other missing/cracked covers — not yet done.
 
 ## Diagnosis
 
