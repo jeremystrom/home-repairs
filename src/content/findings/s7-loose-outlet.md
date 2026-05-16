@@ -9,19 +9,25 @@ order: 7
 inspectorQuote: There is a loose outlet in the home which could lead to connectivity issues and pose a safety hazard. It is recommended to evaluate and repair the outlet as soon as possible.
 photos:
   - src: ../../assets/findings/img-009-061.jpg
-    caption: Loose outlet in tile backsplash
+    caption: Loose outlet in tile backsplash (circled in inspection report)
+  - src: ../../assets/findings/s7-outlet-close-up.jpg
+    caption: Cover plate removed — box is recessed ~3/8–1/2" behind tile and the mounting yoke ears are bent outward from being torqued against the gap
 ---
 
 ## Diagnosis
 
-Root cause: the electrical box was set for original drywall thickness, then tile was installed on top. The box is now recessed too deep, so the outlet is only supported by the cover plate screws and rocks under load. Tile may or may not need cutting depending on whether it protrudes into the device opening.
+Root cause confirmed by the close-up: the electrical box was set for original drywall thickness, then tile was installed on top. The box sits roughly 3/8–1/2" behind the tile face, so the outlet's mounting yoke is being pulled forward by the cover plate screws and bridging the gap with nothing to brace against — it rocks under load and the metal ears are visibly bent.
+
+The tile opening is rough but not overhanging the box, so no tile cutting should be needed. A standard or jumbo cover plate will hide the cut edges once the outlet sits flush.
+
+Because the yoke is bent, plan to replace the outlet itself (not just remount it) — bent ears won't sit square even with an extender.
 
 ## Materials
 
-- **First try:** Carlon B114R box extender ring (or equivalent — ask for "drywall box extender" or "outlet extender") — ~$2 at Home Depot. Pick a depth that brings the box rim flush with the tile face. Common depths are 1/4", 1/2", 3/4".
-- **Alternative:** Pack of outlet leveling shims / caterpillar spacers (Garvin SP-1) — ~$3.
-- Replacement outlet ($2) — only if the old outlet itself is worn.
-- New cover plate to match — make sure it sits flat on tile.
+- **Box extender ring:** Carlon B114R or equivalent ("drywall box extender" / "outlet extender") — ~$2 at Home Depot. Pick depth to bring the box rim flush with the tile face; based on the photo, **1/2" is the likely fit**. Grab a 1/4" too if unsure.
+- **Replacement outlet** ($2) — the existing yoke is bent, swap it.
+- **Jumbo / oversized cover plate** (~3.125" × 5") — ~$2. The standard size may not fully cover the chipped tile edges around the opening.
+- Optional: outlet leveling shims / caterpillar spacers (Garvin SP-1, ~$3) as backup if the extender depth is wrong.
 
 ## Tools
 
@@ -32,13 +38,13 @@ Root cause: the electrical box was set for original drywall thickness, then tile
 ## Repair steps
 
 1. **Kill power**: turn off the kitchen breaker. Confirm with voltage tester at the outlet.
-2. Remove the existing cover plate.
-3. Unscrew the outlet device from the box (two screws top + bottom).
-4. Pull the outlet out (gently — keep hold of the wires).
-5. Measure how far the box face sits behind the tile surface — this tells you the extender depth needed.
-6. **If the tile is flush around the opening** (just framing the hole, not overhanging):
-   - Snap the box extender ring onto the front of the box.
-   - Mount the outlet's screws into the extender's threaded holes (or use the existing box screws through the extender).
-   - The outlet should now sit firm against the tile when the cover plate is reattached.
-7. **If the tile actually overhangs into the device opening** (rare — outlet body can't pass through cleanly): escalate to handyman with a Dremel/diamond bit. Don't attempt tile cutting without practice — one wrong move cracks adjacent hex tiles.
-8. Reattach cover plate, turn power back on, test outlet with a plug-in tester.
+2. Cover plate is already off in the photo — if it's been reattached, remove it again.
+3. Unscrew the outlet from the box (two screws, top + bottom).
+4. Pull the outlet straight out, keeping hold of the wires. Note which color goes to which screw before disconnecting (black = brass, white = silver, bare/green = ground).
+5. Measure the recess depth from the box rim to the tile face with a ruler or the depth gauge on a tape measure. Pick the extender size that matches (likely 1/2").
+6. Disconnect the wires from the old outlet, attach them to the new outlet on the matching screws, and tighten firmly.
+7. Snap the box extender ring onto the front of the box so its front face is flush with the tile.
+8. Push the new outlet into the box, run the long mounting screws through the extender's threaded holes, and tighten until the yoke sits flat against the tile.
+9. Reattach the (jumbo) cover plate, turn the breaker back on, and verify with a $5 plug-in outlet tester that wiring is correct and ground is intact.
+
+If the extender depth turns out to be wrong (outlet still sits proud or recessed after install), swap for the right depth — they're $2 each, faster to buy two than to measure perfectly.
