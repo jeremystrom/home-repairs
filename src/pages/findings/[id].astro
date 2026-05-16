@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import SeverityBadge from '../../components/SeverityBadge.astro';
 import CategoryBadge from '../../components/CategoryBadge.astro';
 import PhotoGallery from '../../components/PhotoGallery.astro';
+import { sortFindings } from '../../lib/sort';
 
 export async function getStaticPaths() {
   const findings = await getCollection('findings');
@@ -16,7 +17,7 @@ export async function getStaticPaths() {
 const { finding } = Astro.props;
 const { Content } = await render(finding);
 
-const findings = (await getCollection('findings')).sort((a, b) => a.data.order - b.data.order);
+const findings = sortFindings(await getCollection('findings'));
 const idx = findings.findIndex(f => f.data.id === finding.data.id);
 const prev = idx > 0 ? findings[idx - 1] : null;
 const next = idx < findings.length - 1 ? findings[idx + 1] : null;

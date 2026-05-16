@@ -2,8 +2,9 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import FindingCard from '../components/FindingCard.astro';
+import { sortFindings } from '../lib/sort';
 
-const findings = (await getCollection('findings')).sort((a, b) => a.data.order - b.data.order);
+const findings = sortFindings(await getCollection('findings'));
 
 const stats = {
   total: findings.length,
