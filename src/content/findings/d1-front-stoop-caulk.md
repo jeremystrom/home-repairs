@@ -7,12 +7,14 @@ location: Where the concrete front stoop meets the brick siding
 pages: "15"
 order: 10
 inspectorQuote: Additional application of caulk where the front stoop meets the brick siding to prevent water entry between the steps and the structure of the home. To prevent any freeze/thaw problems in the future.
-photos: []
+photos:
+  - src: ../../assets/findings/img-023-157.jpg
+    caption: Front porch and stoop — caulk the joint where concrete meets brick on all sides
 ---
 
 ## Diagnosis
 
-No photo provided in the report. The concern is a hairline gap at the joint between the concrete and the brick. Over winters, water gets in, freezes, expands, and gradually opens the joint wider — eventually it can push the steps away from the house.
+The concern is a hairline gap at the joint between the concrete and the brick. Over winters, water gets in, freezes, expands, and gradually opens the joint wider — eventually it can push the steps away from the house.
 
 ## Materials
 

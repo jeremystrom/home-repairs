@@ -7,7 +7,9 @@ location: Driveway
 pages: "23–24"
 order: 12
 inspectorQuote: Cracks are present in the driveway surface. Driveway remains serviceable; homeowner monitoring is recommended.
-photos: []
+photos:
+  - src: ../../assets/findings/img-024-165.jpg
+    caption: Asphalt driveway surface cracking (cosmetic, slurry-sealed previously)
 ---
 
 ## Reason dismissed

@@ -11,10 +11,14 @@ inspectorQuote: Floor joists have not been properly attached to the rim joist vi
 photos:
   - src: ../../assets/findings/img-007-046.jpg
     caption: Hanger with empty holes
+  - src: ../../assets/findings/img-007-047.jpg
+    caption: Empty nail holes circled — every hole needs a fastener
   - src: ../../assets/findings/img-008-051.jpg
     caption: Hangers missing fasteners
   - src: ../../assets/findings/img-022-149.jpg
     caption: Close-up of empty hanger holes
+  - src: ../../assets/findings/img-022-151.jpg
+    caption: Multiple hangers along the rim joist, viewed from below
 ---
 
 ## Bundled work
