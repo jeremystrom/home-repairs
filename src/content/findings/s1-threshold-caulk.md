@@ -6,6 +6,7 @@ severity: repairs-recommended
 location: Front door
 pages: "6, 19"
 order: 1
+status: done
 inspectorQuote: Caulking under the front door threshold needs to be freshened up a bit with new application.
 photos:
   - src: ../../assets/findings/img-006-039.jpg

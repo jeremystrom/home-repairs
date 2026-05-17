@@ -6,12 +6,15 @@ severity: repairs-recommended
 location: Kitchen, outlet in hexagonal tile backsplash (near dish-drying area)
 pages: "9, 30"
 order: 7
+status: done
 inspectorQuote: There is a loose outlet in the home which could lead to connectivity issues and pose a safety hazard. It is recommended to evaluate and repair the outlet as soon as possible.
 photos:
+  - src: ../../assets/findings/s7-completed.jpg
+    caption: Fixed — outlet sits flush against the tile with a standard cover plate
   - src: ../../assets/findings/img-009-061.jpg
-    caption: Loose outlet in tile backsplash (circled in inspection report)
+    caption: Before — loose outlet in tile backsplash (circled in inspection report)
   - src: ../../assets/findings/s7-outlet-close-up.jpg
-    caption: Cover plate removed — box is recessed ~3/8–1/2" behind tile and the mounting yoke ears are bent outward from being torqued against the gap
+    caption: Before (close-up) — box recessed ~3/8–1/2" behind tile, mounting yoke ears bent outward from being torqued against the gap
 ---
 
 ## Diagnosis

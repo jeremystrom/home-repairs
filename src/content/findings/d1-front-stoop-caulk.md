@@ -6,6 +6,7 @@ severity: preventive
 location: Where the concrete front stoop meets the brick siding
 pages: "15"
 order: 10
+status: done
 inspectorQuote: Additional application of caulk where the front stoop meets the brick siding to prevent water entry between the steps and the structure of the home. To prevent any freeze/thaw problems in the future.
 photos:
   - src: ../../assets/findings/img-016-098.jpg
