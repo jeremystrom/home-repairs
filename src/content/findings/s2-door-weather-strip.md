@@ -6,10 +6,13 @@ severity: attention
 location: Garage exterior door
 pages: "6, 19"
 order: 2
+status: done
 inspectorQuote: The weather strip at the exterior door is defective or missing and we recommend repair by a qualified contractor. Repairing this weather strip may improve energy efficiency and prevent entry of insects.
 photos:
+  - src: ../../assets/findings/s2-completed.jpg
+    caption: Fixed — new kerf-in weather strip seated down the latch-side jamb
   - src: ../../assets/findings/img-006-040.jpg
-    caption: Kerf-in weather strip torn at bottom, compressed higher up
+    caption: Before — weather strip torn at bottom, compressed higher up
 ---
 
 ## Diagnosis
